@@ -3,7 +3,7 @@
   become: yes
   vars:
     TOMCAT_LOC: /home/student/apache-tomcat-8.5.78
-    LOCAL_WAR: /var/lib/jenkins/workspace/CICD/target
+    LOCAL_WAR: /var/lib/jenkins/workspace/CI-Job/target
               
 #  /studentapp-studentapp.war
 
@@ -47,8 +47,6 @@
          src: "{{LOCAL_WAR}}/studentapp-studentapp.war"
          dest: "{{TOMCAT_LOC}}/webapps/student.war" 
          mode: '0775'
-
-
 
      - name: Start httpd service 
        service:
